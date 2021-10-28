@@ -27,4 +27,18 @@ class User:
         delete_user method deletes a saved user from the user_list
         '''
 
-        User.user_list.remove(self)       
+        User.user_list.remove(self) 
+    @classmethod
+    def find_by_account_name(cls,account_name):
+        '''
+        Method that takes in a number and returns a contact that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            Contact of person that matches the number.
+        '''
+
+        for user in cls.user_list:
+            if user.account_name == account_name:
+                return user          

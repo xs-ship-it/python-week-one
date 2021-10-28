@@ -50,7 +50,7 @@ class TestUser(unittest.TestCase):
             test_delete_user to test if we can remove a user from our user list
             '''
             self.new_user.save_user()
-            test_user = User("Test""user","kim","5927") # new user
+            test_user = User("Test","kim","5927") # new user
             test_user.save_user()
 
             self.new_user.delete_user()# Deleting a user object
@@ -62,11 +62,11 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("Test","google","kim","5927") # new user
+        test_user = User("Test","google","kim",) # new user
         test_user.save_user()
 
         found_user = User.find_by_account_name("google")
 
-        self.assertEqual(found_user.email,test_user.email)               
+        self.assertEqual(found_user.user_name,test_user.user_name)               
 if __name__ == '__main__':
     unittest.main()
