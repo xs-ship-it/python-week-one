@@ -75,7 +75,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        test_user = User("Test","user","0711223344","test@user.com") # new user
+        test_user = User("Test","google","kim") # new user
         test_user.save_user()
 
         user_exists =User.user_exist("google")
