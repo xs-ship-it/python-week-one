@@ -29,7 +29,7 @@ class User:
 
         User.user_list.remove(self) 
     @classmethod
-    def find_by_account_name(cls,account_name):
+    def find_by_account_name(cls,user_name):
         '''
         Method that takes in a number and returns a contact that matches that number.
 
@@ -40,5 +40,19 @@ class User:
         '''
 
         for user in cls.user_list:
-            if user.account_name == account_name:
+            if user.user_name == user_name:
                 return user          
+    @classmethod
+    def user_exist(cls,user_name):
+        '''
+        Method that checks if a user exists from the user list.
+        Args:
+            user-name: user_name to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
+        '''
+        for user in cls.user_list:
+            if user.user_name == user_name:
+                    return True
+
+        return False
