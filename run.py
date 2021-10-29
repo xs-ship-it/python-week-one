@@ -21,7 +21,7 @@ def find_user(user):
     '''
     Function that finds a user by account_name and returns the user
     '''
-    return User.find_by_account_name(User)
+    return User.find_by_account_name(user)
 def check_existing_users(account_name):
     '''
     Function that check if a user exists with that account_name and return a Boolean
@@ -49,10 +49,10 @@ def main():
                             print("New user")
                             print("-"*10)
 
-                            print ("accountrname ....")
+                            print ("account_name ....")
                             account_name = input()
 
-                            print("Last name ...")
+                            print("user name ...")
                             user_name = input()
 
                             print("Password ...")
@@ -80,21 +80,24 @@ def main():
                                     print("You dont seem to have any users saved yet")
                                     print('\n')
 
+                    
                     elif short_code == 'fu':
 
-                            print("Enter the accountnumber you want to search for")
+                            print("Enter the account_name you want to search for")
 
                             search_account_name = input()
                             if check_existing_users(search_account_name):
                                     search_user = find_user(search_account_name)
-                                    print(f"{search_user.first_name} {search_user.user_name}{search_user.password}")
+                                    
                                     print('-' * 20)
-
-                                    print(f"account_name.......{search_user.account_name}")
-                                    print(f"user_name.......{search_user.user_name}")
-                                    print(f"password ......{search_user.password}")
+                            
+                                    print(User.account_name)
+                                    # print(f"account_name.......{search_user.account_name}")
+                                    # print(f"user_name.......{search_user.user_name}")
+                                    # print(f"password .....{search_user.password}")
                             else:
                                     print("That user does not exist")
+
 
                     elif short_code == "ex":
                             print("Bye .......")
